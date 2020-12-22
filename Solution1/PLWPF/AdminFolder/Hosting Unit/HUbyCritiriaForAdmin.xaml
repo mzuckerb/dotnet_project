@@ -1,0 +1,43 @@
+﻿<Window x:Class="PLWPF.AdminFolder.Hosting_Unit.HUbyCritiriaForAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF.AdminFolder.Hosting_Unit"
+        mc:Ignorable="d"
+        Title="HUbyCritiriaForAdmin" Height="450" Width="800">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="WindowBackgroundBrush">
+            <GradientStop Offset="0" Color="Silver"/>
+            <GradientStop Offset="1" Color="Gray"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="WindowBackgroundBrush1">
+            <GradientStop Offset="0" Color="gray"/>
+            <GradientStop Offset="1" Color="silver"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Grid Background="{StaticResource WindowBackgroundBrush1}">
+        <ScrollViewer x:Name="scrollview1" HorizontalAlignment="Left" Height="401" Margin="404,10,0,0" VerticalAlignment="Top" Width="389">
+            <StackPanel x:Name="b" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Width="auto">
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <Button x:Name="pool" Content="allUnitsWithPools" Background="{StaticResource WindowBackgroundBrush}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="Button_Click"/>
+        <Button x:Name="jac" Content="allUnitsWithJaccuzzis" Background="{StaticResource WindowBackgroundBrush}" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="Button_Click_1"/>
+        <Button x:Name="gardens" Content="allUnitsWithGardens" Background="{StaticResource WindowBackgroundBrush}" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="Button_Click_2"/>
+        <Button x:Name="childA" Content="allUnitsWithchildrensattractions" Background="{StaticResource WindowBackgroundBrush}" HorizontalAlignment="Left" Margin="10,235,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="Button_Click_3"/>
+        <Button x:Name="southHU" Content="All Units In The South" Background="{StaticResource WindowBackgroundBrush}" HorizontalAlignment="Left" Margin="207,10,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="southHU_Click"/>
+        <Button x:Name="northHU" Content="All Units In The North" Background="{StaticResource WindowBackgroundBrush}" HorizontalAlignment="Left" Margin="207,85,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="northHU_Click"/>
+        <Button x:Name="centerHU" Content="All Units In The Center" Background="{StaticResource WindowBackgroundBrush}" HorizontalAlignment="Left" Margin="207,160,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="centerHU_Click"/>
+        <Button x:Name="jemHU" Content="All Units In Jerusalam" Background="{StaticResource WindowBackgroundBrush}" HorizontalAlignment="Left" Margin="207,235,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="jemHU_Click"/>
+        <Button x:Name="BackB" Content="Back" Background="{StaticResource WindowBackgroundBrush1}" HorizontalAlignment="Left" Margin="10,376,0,0" VerticalAlignment="Top" Width="192" Height="35" Click="BackB_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</Window>

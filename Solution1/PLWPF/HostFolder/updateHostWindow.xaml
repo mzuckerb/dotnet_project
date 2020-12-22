@@ -1,0 +1,66 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PLWPF.updateHostWindow"
+        mc:Ignorable="d"
+        Title="updateHostWindow" Height="450" Width="453.333" Loaded="Window_Loaded"
+    Background="DodgerBlue">
+    <Window.Resources>
+
+        <CollectionViewSource x:Key="hostingUnitViewSource" d:DesignSource="{d:DesignInstance {x:Type BE:HostingUnit}, CreateList=True}"/>
+
+    </Window.Resources>
+    <Grid x:Name="grid1" DataContext="{StaticResource hostingUnitViewSource}" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Height="320" Width="355">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="24.167"/>
+            <ColumnDefinition Width="93.833"/>
+            <ColumnDefinition Width="33.5"/>
+            <ColumnDefinition Width="Auto" MinWidth="132.667"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Name="area" Content="Area Of Hosting Unit:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,4,0,14" Grid.Row="0" VerticalAlignment="Center" Height="26" Width="127" Grid.ColumnSpan="3"/>
+        <ComboBox x:Name="areaOfHostingUnitComboBox" Grid.Column="3" HorizontalAlignment="Left" Height="22"  IsEditable="True" IsReadOnly="True" Text="{Binding AreaOfHostingUnit, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="6,6,0,16" Grid.Row="0" VerticalAlignment="Center" Width="124">
+            <ComboBoxItem Content="North" />
+            <ComboBoxItem Content="South" />
+            <ComboBoxItem Content="Center" />
+            <ComboBoxItem Content="Jerusalem" />
+        </ComboBox>
+        <Label Name="commission" Content="Commission:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,8,0,15.667" Grid.Row="1" VerticalAlignment="Center" Height="25" Width="90" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="commission1TextBox" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="6,9,0,16.667" Grid.Row="1" Text="{Binding Commission1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="124"/>
+        <Label Name="childA" Content="has Childrens Attractions:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,6.333,0,10.333" Grid.Row="2" VerticalAlignment="Center" Grid.ColumnSpan="4" Height="26" Width="158"/>
+        <CheckBox x:Name="hasChildrensAttractions1CheckBox" Content="" Grid.Column="3" HorizontalAlignment="Left" IsChecked="{Binding hasChildrensAttractions1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="6,11.333,0,15.333" Grid.Row="2" VerticalAlignment="Center" Height="16" Width="22"/>
+        <Label Name="garden" Content="has Garden:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,5.667,0,11" Grid.Row="3" VerticalAlignment="Center" Height="26" Width="84" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="hasGarden1CheckBox" Content="" Grid.Column="3" HorizontalAlignment="Left" IsChecked="{Binding hasGarden1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="6,10.667,0,16" Grid.Row="3" VerticalAlignment="Center" Height="16" Width="22"/>
+        <Label Name="jac" Content="has Jaccuzzi:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,10,0,6.667" Grid.Row="4" VerticalAlignment="Center" Height="26" Width="88" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="hasJaccuzzi1CheckBox" Content="" Grid.Column="3" HorizontalAlignment="Left" IsChecked="{Binding hasJaccuzzi1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="6,15,0,11.667" Grid.Row="4" VerticalAlignment="Center" Height="16" Width="22"/>
+        <Label Name="pool" Content="has Pool:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,5.333,0,11.333" Grid.Row="5" VerticalAlignment="Center" Height="26" Width="69" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="hasPool1CheckBox" Content="" Grid.Column="3" HorizontalAlignment="Left" IsChecked="{Binding hasPool1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="6,10.333,0,16.333" Grid.Row="5" VerticalAlignment="Center" Height="16" Width="22"/>
+        <Label Name="hun" Content="Hosting Unit Name:" HorizontalAlignment="Left" Margin="3,-34,0,53" VerticalAlignment="Center" Height="27" Width="124" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="hostingUnitName1TextBox" HorizontalAlignment="Left" Height="28" Margin="5.667,-35,-22.667,53" Text="{Binding HostingUnitName1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="151" Grid.Column="3"/>
+        <Button x:Name="update" Content="Update" Background="Lime" FontSize="25" Grid.Column="3" HorizontalAlignment="Left" Margin="71.667,56,-126,-44" Grid.Row="6" VerticalAlignment="Top" Width="195" Height="34" Click="Button_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="back" Background="IndianRed" Grid.ColumnSpan="4" Content="Back" FontSize="25" HorizontalAlignment="Left" Margin="3,55,0,-44.667" Grid.Row="6" VerticalAlignment="Top" Width="191" Height="35" Click="Button_Click_1">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

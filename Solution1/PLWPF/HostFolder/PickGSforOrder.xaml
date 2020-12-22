@@ -1,0 +1,79 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PLWPF.PickGSforOrder"
+        mc:Ignorable="d"
+        Title="PickGSforOrder" Height="450" Width="800" Loaded="Window_Loaded"
+    Background="DodgerBlue">
+    <Window.Resources>
+        <CollectionViewSource x:Key="hostingUnitViewSource" d:DesignSource="{d:DesignInstance {x:Type BE:HostingUnit}, CreateList=True}"/>
+        <LinearGradientBrush x:Key="WindowBackgroundBrush">
+            <GradientStop Offset="0" Color="Silver"/>
+            <GradientStop Offset="1" Color="Cornsilk"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Grid>
+
+        <Grid x:Name="grid2" VerticalAlignment="Top" Margin="503,74,0,0" HorizontalAlignment="Left" DataContext="{StaticResource hostingUnitViewSource}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Name="area" VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Area Of Hosting Unit:"/>
+            <TextBox IsReadOnly="True" x:Name="areaOfHostingUnittextbox" Width="120" VerticalAlignment="Bottom" Grid.Row="2" Margin="3,0,0,7" Text="{Binding AreaOfHostingUnit, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Height="Auto" HorizontalAlignment="Left" Grid.Column="1">
+
+            </TextBox>
+            <Label Name="commis" VerticalAlignment="Center" Grid.Row="3" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Commission:"/>
+            <TextBox IsReadOnly="True" x:Name="commission1TextBox" Width="120" VerticalAlignment="Center" Text="{Binding Commission1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+            <Label Name="hca" VerticalAlignment="Center" Grid.Row="4" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="has Childrens Attractions:"/>
+            <CheckBox IsEnabled="False" x:Name="hasChildrensAttractions1CheckBox" VerticalAlignment="Center" Grid.Row="4" Margin="3" IsChecked="{Binding hasChildrensAttractions1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Grid.Column="1" Content=""/>
+            <Label Name="garden" VerticalAlignment="Center" Grid.Row="5" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="has Garden:"/>
+            <CheckBox IsEnabled="False" x:Name="hasGarden1CheckBox" VerticalAlignment="Center" Grid.Row="5" Margin="3" IsChecked="{Binding hasGarden1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Grid.Column="1" Content=""/>
+            <Label Name="jac" VerticalAlignment="Center" Grid.Row="6" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="has Jaccuzzi:"/>
+            <CheckBox IsEnabled="False" x:Name="hasJaccuzzi1CheckBox" VerticalAlignment="Center" Grid.Row="6" Margin="3" IsChecked="{Binding hasJaccuzzi1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Grid.Column="1" Content=""/>
+            <Label Name="pool" VerticalAlignment="Center" Grid.Row="7" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="has Pool:"/>
+            <CheckBox IsEnabled="False" x:Name="hasPool1CheckBox" VerticalAlignment="Center" Grid.Row="7" Margin="3" IsChecked="{Binding hasPool1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Grid.Column="1" Content=""/>
+            <Label Name="hukey" VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Hosting Unit Key:"/>
+            <Label x:Name="hostingUnitKey1Label" VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="1" Content="{Binding HostingUnitKey1}"/>
+            <Label Name="huname" VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Hosting Unit Name:"/>
+            <TextBox IsReadOnly="True" x:Name="hostingUnitName1TextBox" Width="120" VerticalAlignment="Center" Text="{Binding HostingUnitName1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="3" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
+        </Grid>
+
+        <ScrollViewer x:Name="scrollview1" Visibility="Visible" HorizontalAlignment="Left" Height="401" Margin="10,10,0,0" VerticalAlignment="Top" Width="434">
+            <StackPanel x:Name="b" HorizontalAlignment="Stretch" Height="auto" VerticalAlignment="Stretch" Width="auto"/>
+        </ScrollViewer>
+
+        <Button Background="IndianRed" x:Name="BackB" Content="Back" HorizontalAlignment="Left" Margin="608,378,0,9.667" Width="171" Click="BackB_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Name="header" Content="your chosen hosting unit:" FontSize="20" HorizontalAlignment="Left" Margin="506,23,0,0" VerticalAlignment="Top" Height="46" Width="273"/>
+
+        <Button x:Name="poolGR" Visibility="Visible" Background="{StaticResource WindowBackgroundBrush}" Content="allGRsWithPools" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="poolGR_Click"/>
+        <Button x:Name="jaccuzziGR" Visibility="Visible" Background="{StaticResource WindowBackgroundBrush}" Content="allGRsWithJaccuzzis" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="jaccuzziGR_Click"/>
+        <Button x:Name="gardenGR" Visibility="Visible"  Background="{StaticResource WindowBackgroundBrush}" Content="allGRsWithGardens" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="gardenGR_Click"/>
+        <Button x:Name="childrenGR" Visibility="Visible"  Background="{StaticResource WindowBackgroundBrush}" Content="allGRsWithchildrensattractions" HorizontalAlignment="Left" Margin="10,235,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="childrenGR_Click"/>
+        <Button x:Name="southGR" Visibility="Visible"  Background="{StaticResource WindowBackgroundBrush}" Content="All GRs In The South" HorizontalAlignment="Left" Margin="207,10,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="southGR_Click"/>
+        <Button x:Name="northGR" Visibility="Visible"  Background="{StaticResource WindowBackgroundBrush}" Content="All GRs In The North" HorizontalAlignment="Left" Margin="207,85,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="northGR_Click"/>
+        <Button x:Name="centerGR" Visibility="Visible"  Background="{StaticResource WindowBackgroundBrush}" Content="All GRs In The Center" HorizontalAlignment="Left" Margin="207,160,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="centerGR_Click"/>
+        <Button x:Name="jemGR" Visibility="Visible"  Background="{StaticResource WindowBackgroundBrush}" Content="All GRs In Jerusalam" HorizontalAlignment="Left" Margin="207,235,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="jemGR_Click"/>
+        <Button x:Name="allGR" Visibility="Visible"  Content="all available guest requests" Background="{StaticResource WindowBackgroundBrush}" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" Width="192" Height="70" Click="allGR_Click"/>
+
+    </Grid>
+</Window>

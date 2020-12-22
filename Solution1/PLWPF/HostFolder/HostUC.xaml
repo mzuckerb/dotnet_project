@@ -1,0 +1,103 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PLWPF.HostFolder"
+             xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PLWPF.HostFolder.HostUC"
+             mc:Ignorable="d" Loaded="UserControl_Loaded" Height="456.564" Width="459.417">
+    <UserControl.Resources>
+        <DataTemplate x:Key="MyDataTemplate"  DataType="local:BankBranchDetails">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                   Text="{Binding Path=BankBranchDetails.BranchNumbner1}" />
+                <TextBlock Grid.Column="1"
+                   Text="{Binding Path=BankBranchDetails.BankNumber1}" />
+                <TextBlock Grid.Column="2"
+                   Text=" "/>
+                <TextBlock Grid.Column="3"
+                   Text="{Binding Path=BankBranchDetails.BankName1}" />
+                <TextBlock Grid.Column="4"
+                   Text=" "/>
+                <TextBlock Grid.Column="5"
+                   Text="{Binding Path=BankBranchDetails.BranchAddress1}" />
+                <TextBlock Grid.Column="6"
+                   Text=" "/>
+                <TextBlock Grid.Column="7"
+                   Text="{Binding Path=BankBranchDetails.BranchCity1}" />
+            </Grid>
+        </DataTemplate>
+        <CollectionViewSource x:Key="hostViewSource" d:DesignSource="{d:DesignInstance {x:Type BE:Host}, CreateList=True}"/>
+    </UserControl.Resources>
+
+    <Grid Background="Cyan" x:Name="hostGrid"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="450" Margin="0,0,0,-50" Width="455">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="54*" />
+            <ColumnDefinition Width="173*"/>
+            <ColumnDefinition Width="227*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Name="bank" VerticalAlignment="Top" Margin="2,1.667,0,0" HorizontalAlignment="Left" Grid.Column="0"  Content="Bank Account Number:" Height="36" Width="224" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <TextBox x:Name="bankAccountNumber1TextBox" IsReadOnly="True" Width="222" VerticalAlignment="top" Text="{Binding BankAccountNumber1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3.667,0.667,0,0" Height="28" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="1"/>
+        <Label Name="pname" Content="Private Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,13,0,0" Grid.Row="0" VerticalAlignment="top" Width="224" Height="26" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="privateName1TextBox" IsReadOnly="True" HorizontalAlignment="Left" Height="24" Margin="172.981,13,0,0" Grid.Row="0" Text="{Binding PrivateName1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="top" Width="226" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Label Name="fname" Content="Family Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="2,45,0,32.333" Grid.Row="0" VerticalAlignment="Center" Height="26" Width="224" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="familyName1TextBox" IsReadOnly="True" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3.667,46,0,33.333" Grid.Row="0" Text="{Binding FamilyName1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="223"/>
+        <Label Name="mail" Content="Mail Address:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,37.667,0,39.667" Grid.Row="1" VerticalAlignment="Center" Height="26" Width="222" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="mailAddress1TextBox" IsReadOnly="True" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3.667,38.667,-0.333,40.667" Grid.Row="1" Text="{Binding MailAddress1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="224"/>
+        <Label Name="phone" Content="Phone Number:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,0,0,9.667" Grid.Row="1" VerticalAlignment="Bottom" Height="26" Width="220" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="phoneNumber1TextBox" IsReadOnly="True" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3.667,0,-1.333,11.667" Grid.Row="1" Text="{Binding PhoneNumber1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Bottom" Width="225"/>
+        <Label Name="num" Content="Num Of Hostin Units:" Grid.Column="0" HorizontalAlignment="Left" Margin="5,0.333,0,0" Grid.Row="2" VerticalAlignment="top" Height="26" Width="220" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="numOfHostinUnits1TextBox" IsReadOnly="True" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="4.667,0.333,-2.333,0" Grid.Row="2" Text="{Binding NumOfHostinUnits1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="top" Width="225"/>
+        <Label Name="collection" Content="Collection Clearance:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,33.333,0,43.333" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="130" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="collectionClearance1CheckBox" IsEnabled="False" HorizontalAlignment="Left" IsChecked="{Binding CollectionClearance1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="9.667,33.333,0,43.333" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="39" Grid.Column="2"/>
+        <Label Name="hkey" Content="Host Key:" Grid.Column="0" HorizontalAlignment="Left" Margin="2,0,0,3.333" Grid.Row="0" VerticalAlignment="Bottom" Height="26" Width="224" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="hostKey1TextBox" IsReadOnly="True" HorizontalAlignment="Left" Height="25" Margin="2.667,0,0,3.333" Grid.Row="0" Text="{Binding HostKey1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Bottom" Width="222" Grid.Column="2"/>
+        <Grid x:Name="grid1"  HorizontalAlignment="Left" Margin="10,64.667,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Bank Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <Label x:Name="bankName1Label" Content="{Binding BankBranchDetails1.BankName1}" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <Label Content="Bank Number:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+            <Label x:Name="bankNumber1Label" Content="{Binding BankBranchDetails1.BankNumber1}" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+            <Label Content="Branch Address:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+            <Label x:Name="branchAddress1Label" Content="{Binding BankBranchDetails1.BranchAddress1}" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+            <Label Content="Branch City:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
+            <Label x:Name="branchCity1Label" Content="{Binding BankBranchDetails1.BranchCity1}" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
+            <Label Content="Branch Numbner:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
+            <Label x:Name="branchNumbner1Label" Content="{Binding BankBranchDetails1.BranchNumbner1}" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
+        </Grid>
+        <!--<ListBox x:Name="listbx"  ItemsSource="{Binding}"
+                 ItemTemplate="{StaticResource MyDataTemplate}"
+                 HorizontalAlignment="Stretch" Margin="5,58.667,12.667,0" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="3"/>-->
+    </Grid>
+</UserControl>

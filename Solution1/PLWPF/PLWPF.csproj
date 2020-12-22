@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FFB5F6DF-F4C9-4080-B20B-66AF11D67288}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PLWPF</RootNamespace>
+    <AssemblyName>PLWPF</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo22.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.7.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.7.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.7.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.7.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.7.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.7.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.7.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.7.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.7.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.7.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AdminFolder\GuestRequest\GRbyCritiriaForAdmin.xaml.cs">
+      <DependentUpon>GRbyCritiriaForAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFolder\Hosting Unit\HUbyCritiriaForAdmin.xaml.cs">
+      <DependentUpon>HUbyCritiriaForAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFolder\Host\AdminHostFunctions.xaml.cs">
+      <DependentUpon>AdminHostFunctions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFolder\Hosting Unit\AdminHUfunctions.xaml.cs">
+      <DependentUpon>AdminHUfunctions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFolder\GuestRequest\ShowAllGR.xaml.cs">
+      <DependentUpon>ShowAllGR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFolder\Host\ShowAllHosts.xaml.cs">
+      <DependentUpon>ShowAllHosts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFolder\Hosting Unit\showAllUnits.xaml.cs">
+      <DependentUpon>showAllUnits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFolder\Order\AdminOrderFunctions.xaml.cs">
+      <DependentUpon>AdminOrderFunctions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFolder\Order\showAllOrders.xaml.cs">
+      <DependentUpon>showAllOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnumToString.cs" />
+    <Compile Include="GRfolder\deletByNameChoose.xaml.cs">
+      <DependentUpon>deletByNameChoose.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GRfolder\deleteByNameUC.xaml.cs">
+      <DependentUpon>deleteByNameUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SignInFolder\forgotPassWin.xaml.cs">
+      <DependentUpon>forgotPassWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GRfolder\GRUCforUpdate.xaml.cs">
+      <DependentUpon>GRUCforUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="hebEnglish.cs" />
+    <Compile Include="HostFolder\GRuserControlForAddOrder.xaml.cs">
+      <DependentUpon>GRuserControlForAddOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostFolder\AddUnit.xaml.cs">
+      <DependentUpon>AddUnit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFolder\GuestRequest\AdminGRfunctions.xaml.cs">
+      <DependentUpon>AdminGRfunctions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminFolder\AdminMainWindow.xaml.cs">
+      <DependentUpon>AdminMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GRfolder\GRUserControl.xaml.cs">
+      <DependentUpon>GRUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostFolder\hostShowAllOrders.xaml.cs">
+      <DependentUpon>hostShowAllOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostFolder\HostUC.xaml.cs">
+      <DependentUpon>HostUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostFolder\OrderUC.xaml.cs">
+      <DependentUpon>OrderUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostFolder\showAllHUWindow.xaml.cs">
+      <DependentUpon>showAllHUWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostFolder\HUuserCuntrol.xaml.cs">
+      <DependentUpon>HUuserCuntrol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostFolder\PickGSforOrder.xaml.cs">
+      <DependentUpon>PickGSforOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostFolder\UpdateOrderUC.xaml.cs">
+      <DependentUpon>UpdateOrderUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostFolder\updateOrderWindow.xaml.cs">
+      <DependentUpon>updateOrderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="realEntryPage.xaml.cs">
+      <DependentUpon>realEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SignInFolder\HostRegistration.xaml.cs">
+      <DependentUpon>HostRegistration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SignInFolder\Registration.xaml.cs">
+      <DependentUpon>Registration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SignInFolder\SignInPage.xaml.cs">
+      <DependentUpon>SignInPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GRfolder\UpdateByNameChoose.xaml.cs">
+      <DependentUpon>UpdateByNameChoose.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GRfolder\UpdateDeleteBy.xaml.cs">
+      <DependentUpon>UpdateDeleteBy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GRfolder\UpdateGuestRequest.xaml.cs">
+      <DependentUpon>UpdateGuestRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostFolder\updateHostWindow.xaml.cs">
+      <DependentUpon>updateHostWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostFolder\updeletebyunit.xaml.cs">
+      <DependentUpon>updeletebyunit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SignInFolder\Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AdminFolder\GuestRequest\GRbyCritiriaForAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminFolder\Hosting Unit\HUbyCritiriaForAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminFolder\Host\AdminHostFunctions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminFolder\Hosting Unit\AdminHUfunctions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminFolder\GuestRequest\ShowAllGR.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminFolder\Host\ShowAllHosts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminFolder\Hosting Unit\showAllUnits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminFolder\Order\AdminOrderFunctions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminFolder\Order\showAllOrders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GRfolder\deletByNameChoose.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GRfolder\deleteByNameUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignInFolder\forgotPassWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GRfolder\AddGuestRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GRfolder\GRUCforUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostFolder\GRuserControlForAddOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostFolder\AddUnit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminFolder\GuestRequest\AdminGRfunctions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminFolder\AdminMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GRfolder\GRUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GRfolder\GuestRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostFolder\hostShowAllOrders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostFolder\HostUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostFolder\HostWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostFolder\OrderUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostFolder\showAllHUWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostFolder\HUuserCuntrol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostFolder\PickGSforOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostFolder\UpdateOrderUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostFolder\updateOrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="realEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignInFolder\HostRegistration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="GRfolder\AddGuestRequest.xaml.cs">
+      <DependentUpon>AddGuestRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GRfolder\GuestRequest.xaml.cs">
+      <DependentUpon>GuestRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HostFolder\HostWindow.xaml.cs">
+      <DependentUpon>HostWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="HostFolder\AddOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignInFolder\Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignInFolder\SignInPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GRfolder\UpdateByNameChoose.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GRfolder\UpdateDeleteBy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GRfolder\UpdateGuestRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostFolder\updateHostWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostFolder\updeletebyunit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignInFolder\Welcome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HostFolder\AddOrder.xaml.cs">
+      <DependentUpon>AddOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\BE.BEEnum+Area.datasource" />
+    <None Include="Properties\DataSources\BE.BEEnum+Option.datasource" />
+    <None Include="Properties\DataSources\BE.BEEnum+Status.datasource" />
+    <None Include="Properties\DataSources\BE.BEEnum+_Type.datasource" />
+    <None Include="Properties\DataSources\BE.GuestRequest.datasource" />
+    <None Include="Properties\DataSources\BE.Host.datasource" />
+    <None Include="Properties\DataSources\BE.HostingUnit.datasource" />
+    <None Include="Properties\DataSources\BE.Order1.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{6a0105c2-27fa-40d6-9776-0028b4d16daf}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{6f286be7-5360-44a3-98cc-16bc3854eb5d}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\recaptchLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\addGR.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\ThumbsUp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\checkbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\langIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\engIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\hebIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\vacation6.jpg" />
+    <Resource Include="pictures\vacation5.jpg" />
+    <Resource Include="pictures\vacation4.jpg" />
+    <Resource Include="pictures\vacation3.jpg" />
+    <Resource Include="pictures\vacation2.jpg" />
+    <Resource Include="pictures\shwoLogo.png" />
+    <Resource Include="pictures\updatelogo1.png" />
+    <Resource Include="pictures\updateLogo.jpeg" />
+    <Resource Include="pictures\plusLogo.jpg" />
+    <Resource Include="logo22.ico" />
+    <SplashScreen Include="logo111.png" />
+    <Content Include="main finished.mp4" />
+    <Resource Include="pictures\deleteLogo.png" />
+    <Resource Include="pictures\vacationpic.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

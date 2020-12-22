@@ -1,0 +1,51 @@
+﻿<Window x:Class="PLWPF.AdminOrderFunctions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="AdminOrderFunctions" Height="450" Width="800">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="WindowBackgroundBrush">
+            <GradientStop Offset="0" Color="Aqua"/>
+            <GradientStop Offset="1" Color="Transparent"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/PLWPF;component/pictures/vacation5.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Button x:Name="GetAllOrders" FontWeight="Bold" FontSize="20" FontFamily="Courier new" Background="{StaticResource WindowBackgroundBrush}" Content="get all orders"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="360" Height="100" Click="GetAllOrders_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="removeOld" FontWeight="Bold" Content="Remove Old Orders" Visibility="Visible" Click="removerOldOrdersButton" FontSize="20" FontFamily="Courier new" Background="{StaticResource WindowBackgroundBrush}" HorizontalAlignment="Left" Margin="423,10,0,0" VerticalAlignment="Top" Width="360" Height="100">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="Remove" Click="Remove_Click" Visibility="Hidden" Content="Remove" Background="Aqua" Margin="423,10,203.333,310.667">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="BackButton" FontWeight="Bold" FontSize="20" FontFamily="Courier new" Background="IndianRed" Content="Back" HorizontalAlignment="Left" Margin="423,351,0,0" VerticalAlignment="Top" Width="360" Height="60" Click="BackButton_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <xctk:WatermarkTextBox x:Name="textBox" Visibility="Hidden"  HorizontalAlignment="Left" Height="100" Margin="590,10,0,0" TextWrapping="Wrap" Watermark="Please enter number of days" VerticalAlignment="Top" Width="193"/>
+
+    </Grid>
+</Window>
